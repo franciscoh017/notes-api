@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "name": "notesApi",
+  "builds": [
+    { "src": "*.html", "use": "@now/static" },
+    { "src": "dist/main.js", "use": "@now/node" }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dist/main.js"
+    }
+  ]
+}
