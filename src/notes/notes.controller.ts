@@ -6,9 +6,7 @@ import { Note } from './interfaces/note.interface'
 
 @Controller('notes')
 export class NotesController {
-
-
-    constructor(private readonly notesService: NotesService){}
+    constructor(private readonly notesService: NotesService) { }
 
     @Get()
     findAll(): Promise<Note[]> {
@@ -22,7 +20,7 @@ export class NotesController {
 
     @Post()
     create(@Body() createNoteDto: CreateNoteDto): Promise<Note> {
-        return this.notesService.create(createNoteDto); 
+        return this.notesService.create(createNoteDto);
     }
 
     @Delete(':id')
@@ -32,6 +30,6 @@ export class NotesController {
 
     @Put(':id')
     update(@Body() updateNoteDto: CreateNoteDto, @Param('id') id): Promise<Note> {
-        return this.notesService.update(id,updateNoteDto);
+        return this.notesService.update(id, updateNoteDto);
     }
 }
